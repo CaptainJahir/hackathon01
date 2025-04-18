@@ -1,32 +1,45 @@
 "use client"
-import React, { useState } from 'react'  // ✅ Correct
+import React, { useState } from 'react' 
 import Link from 'next/link'
 
 const Navbar = ({ logBtnTxt, logBtnFunction }) => {
   return (
     <nav className='bg-gray-800 flex justify-between items-center px-4 h-14'>
       <Link href="/">
-          V-Connect
+      <div className='text-2xl font-semibold flex justify-center items-baseline'>
+        <span className='text-red-500 text-[2rem]'>
+          V
+        </span>
+        <span className='font-semibold text-blue-400'>
+          C
+        </span>
+        <span className='text-blue-400'>
+          onnect
+        </span>
+      </div>
       </Link>
 
-      {/* features */}
-      <div className='flex justify-between items-center gap-3'>
-        <Link href="/lost-items">
-          <div className='px-3 py-1 rounded-lg hover:bg-gray-700 cursor-pointer'>Lost Items</div>
-        </Link>
 
-        <Link href="/clg-events">
-          <div className='px-3 py-1 rounded-lg hover:bg-gray-700 cursor-pointer'>Events</div>
+      
+      <div className='flex justify-center items-center gap-1'>
+
+      <Link href="/lost-found-items">
+          <div className='hover:bg-slate-600 px-2 py-1 rounded-md cursor-pointer'>
+            Lost and Found Items
+          </div>
         </Link>
         
-        <Link href="/notes">
-          <div className='px-3 py-1 rounded-lg hover:bg-gray-700 cursor-pointer'>Notes</div>
-        </Link>
-        
-        <Link href="/social">
-          <div className='px-3 py-1 rounded-lg hover:bg-gray-700 cursor-pointer'>Social</div>
+        <Link href="/report-lost-items">
+          <div className='hover:bg-slate-600 px-2 py-1 rounded-md cursor-pointer'>
+            Report Lost Items
+          </div>
         </Link>
 
+        <Link href="/report-found-items">
+          <div className='hover:bg-slate-600 px-2 py-1 rounded-md cursor-pointer'>
+            Report Found Items
+          </div>
+        </Link>
         <div className='px-3 py-1 rounded-lg hover:bg-gray-700 cursor-pointer' onClick={() => logBtnFunction()}>{logBtnTxt}</div>
       </div>
     </nav>
